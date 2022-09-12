@@ -19,5 +19,22 @@
   <script src="{{ "assets/languageSelector.js" | absURL }}"></script>
 {{ end }}
 
+{{ if .Site.Params.GithubLink }}
+<script> // Get link to Github
+const baseUrl = "{{.Site.Params.GithubLink}}/blob/main/content"
+const filePath = "{{.File.Path}}"
+
+console.log(filePath)
+
+let githubUrl = baseUrl + "/" + filePath
+let items = document.getElementsByClassName("github-link")
+
+if (items.length > 0) {
+    items[0].href = githubUrl
+}
+
+</script>
+{{ end }}
+
 <!-- Extended footer section-->
 {{ partial "extended_footer.html" . }}

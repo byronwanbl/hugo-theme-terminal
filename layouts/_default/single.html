@@ -17,6 +17,13 @@
     {{ if and (.Param "readingTime") (eq (.Param "readingTime") true) }}
       <span class="post-reading-time">:: {{ .ReadingTime }} min read ({{ .WordCount }} words)</span>
     {{ end }}
+  <br/>
+
+  {{ if .Site.Params.GithubLink }}
+  <span class="post-github">
+  View or edit on <b><a class="github-link" href="">Github</a></b>
+  </span>
+  {{ end }}
   </div>
 
   {{ if .Params.tags }}
